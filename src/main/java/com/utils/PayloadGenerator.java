@@ -1,4 +1,4 @@
-package com.easybix.utils;
+package com.utils;
 
 import java.nio.file.Files;
 import java.nio.file.Paths;

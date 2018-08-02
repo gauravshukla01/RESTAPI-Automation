@@ -1,4 +1,4 @@
-package com.easybix.utils;
+package com.utils;
 
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;

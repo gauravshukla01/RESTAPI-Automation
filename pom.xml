@@ -101,6 +101,36 @@
 			<artifactId>extentreports</artifactId>
 			<version>2.41.2</version>
 		</dependency>
+		
+		<dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-databind</artifactId>
+        <version>2.5.3</version>
+    </dependency>
+    
+    <dependency>
+			<groupId>org.cts.hybrid</groupId>
+			<artifactId>ConfigProvider</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.cts.hybrid</groupId>
+			<artifactId>ExcelReader</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		
+			<dependency>
+			<groupId>org.cts.hybrid</groupId>
+			<artifactId>ExtentReports</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.cts.hybrid</groupId>
+			<artifactId>Utilities</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 
 	</dependencies>
 

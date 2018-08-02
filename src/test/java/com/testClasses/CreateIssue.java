@@ -1,14 +1,15 @@
-package com.easybix.Issue;
+package com.testClasses;
 
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import com.easybix.RestAssuredCore.BaseAssertion;
-import com.easybix.RestAssuredCore.BaseTest;
-import com.easybix.RestAssuredCore.RESTCalls;
-import com.easybix.utils.PayloadGenerator;
-import com.easybix.utils.URL;
+
+import com.Core.BaseAssertion;
+import com.Core.BaseTest;
+import com.Core.RESTCalls;
+import com.utils.PayloadGenerator;
+import com.utils.URL;
 
 import io.restassured.response.Response;
 

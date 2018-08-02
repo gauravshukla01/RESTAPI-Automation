@@ -1,34 +1,53 @@
-package com.easybix.Issue;
+package com.testClasses;
 
+import org.cts.hybrid.ExtentReports.ExtentManager;
+import org.cts.hybrid.ExtentReports.ExtentTestManager;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import com.easybix.RestAssuredCore.BaseAssertion;
-import com.easybix.RestAssuredCore.RESTCalls;
-import com.easybix.utils.PayloadGenerator;
-import com.easybix.utils.URL;
+import com.Core.BaseAssertion;
+import com.Core.RESTCalls;
+import com.utils.PayloadGenerator;
+import com.utils.TestUtils;
+import com.utils.URL;
 
+import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 
 public class Test001 {
 	
+
 	Response response;
 	String endPointUrl;
 	
+			
 	@BeforeMethod
 	public void generateAuth() {
 		
 	}
 	
-//	@Test
+	@Test
 	public void testGet() {
+			
+		
+		ExtentTestManager.startTest("Get Test", "Validate Get Request");
 		
 		endPointUrl = URL.getEndPoint();
 		
 		response = RESTCalls.GETRequest(endPointUrl);	
-		System.out.println("GET RESPONSE "+response.asString());
+		
 		BaseAssertion.verifyStatusCode(response, 200);
+				
 		System.out.println("*****************GET REQUEST COMPLETE*******************");
+		
+		String extractedResponse = TestUtils.getResposeString(response);
+		
+		JsonPath jsonObject = TestUtils.jsonParser(extractedResponse); 
+		
+		System.out.println(" " +jsonObject.get("$"));
+		
+		ExtentTestManager.endTest();
+		
 	}
 
 //	@Test
@@ -38,13 +57,13 @@ public class Test001 {
 		endPointUrl = URL.getEndPoint();
 		
 		response = RESTCalls.POSTRequest(endPointUrl, payload);	
-		System.out.println("POST RESPONSE "+response.asString());
+		System.out.println("POST RESPONSE "+ response.asString());
 		BaseAssertion.verifyStatusCode(response, 201);
 		
 		System.out.println("*****************POST REQUEST COMPLETE*******************");
 	}
 	
-	@Test
+//	@Test
 	public void testPut() {
 		
 		endPointUrl = URL.getEndPoint("100");
@@ -58,23 +77,3 @@ public class Test001 {
 		BaseAssertion.verifyStatusCode(response, 200);
 	}
 }
-
-/*JsonPath json = new JsonPath(responseString);
-int arraySize = json.getInt("results.size()");
-
-for(int i=0;i < arraySize;i++){
-	String name = json.getString("results["+i+"].name");
-	System.out.println(name);
-}*/
-
-/*https://reqres.in/api/register
-
-GET - https://reqres.in/api/users?page=2
-
-Post - https://reqres.in/api/users
-
-{
-    "name": "morpheus",
-    "job": "leader"
-} */
-

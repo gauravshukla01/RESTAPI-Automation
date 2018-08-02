@@ -1,10 +1,10 @@
-package com.easybix.Issue;
+package com.testClasses;
 
 import org.testng.annotations.Test;
 
-import com.easybix.RestAssuredCore.BaseAssertion;
-import com.easybix.RestAssuredCore.RESTCalls;
-import com.easybix.utils.URL;
+import com.Core.BaseAssertion;
+import com.Core.RESTCalls;
+import com.utils.URL;
 
 import io.restassured.RestAssured;
 import io.restassured.response.Response;

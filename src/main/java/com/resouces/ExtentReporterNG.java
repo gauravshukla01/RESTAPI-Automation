@@ -1,4 +1,4 @@
-package com.easybix.resouces;
+package com.resouces;
 
 import java.io.File;
 import java.util.Calendar;

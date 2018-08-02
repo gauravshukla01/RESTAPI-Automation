@@ -6,7 +6,7 @@
       <class name="com.easybix.Issue.Test001">
         <methods>
           <include name="generateAuth"/>
-          <include name="testPut"/>
+          <include name="testGet"/>
         </methods>
       </class> <!-- com.easybix.Issue.Test001 -->
     </classes>
