@@ -2,6 +2,8 @@ package com.Core;
 
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.cts.hybrid.ConfigProvider.ConfigProvider;
+
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;
@@ -67,7 +69,8 @@ public class RESTCalls {
 				new SSLConfig().relaxedHTTPSValidation())).contentType(ContentType.URLENC);
 		
 		requestSpecification.contentType(ContentType.JSON);
-		requestSpecification.proxy("proxy.cognizant.com", 6050);
+	//	requestSpecification.proxy("proxy.cognizant.com", 6050);
+		requestSpecification.proxy(ConfigProvider.getAsString("proxy"), 0, ConfigProvider.getAsString("port"));
 		requestSpecification.body(strJSON);
 		Response response = requestSpecification.put(uRI);
 		log.debug(requestSpecification.log().all());

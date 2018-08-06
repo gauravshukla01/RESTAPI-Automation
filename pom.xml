@@ -28,6 +28,11 @@
 						</suiteXmlFiles>
 					</configuration>
 				</plugin>
+				<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>3.1.0</version>
+			</plugin>
 			</plugins>
 		</pluginManagement>
 
@@ -38,6 +43,9 @@
 			
 			<resource>
 				<directory>src/main/java/com/easybix/resouces</directory>
+			</resource>
+			<resource>
+				<directory>src/test/resouces</directory>
 			</resource>
 		</resources>
 		

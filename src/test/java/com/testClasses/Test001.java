@@ -1,12 +1,13 @@
 package com.testClasses;
 
-import org.cts.hybrid.ExtentReports.ExtentManager;
+
 import org.cts.hybrid.ExtentReports.ExtentTestManager;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.Core.BaseAssertion;
 import com.Core.RESTCalls;
+import com.aventstack.extentreports.Status;
 import com.utils.PayloadGenerator;
 import com.utils.TestUtils;
 import com.utils.URL;
@@ -19,7 +20,6 @@ public class Test001 {
 
 	Response response;
 	String endPointUrl;
-	
 			
 	@BeforeMethod
 	public void generateAuth() {
@@ -29,8 +29,7 @@ public class Test001 {
 	@Test
 	public void testGet() {
 			
-		
-		ExtentTestManager.startTest("Get Test", "Validate Get Request");
+	//	ExtentTestManager.getTest().log(Status.INFO, "Get Test Started");
 		
 		endPointUrl = URL.getEndPoint();
 		
@@ -46,10 +45,10 @@ public class Test001 {
 		
 		System.out.println(" " +jsonObject.get("$"));
 		
-		ExtentTestManager.endTest();
+	//	ExtentTestManager.endTest();
 		
 	}
-
+	
 //	@Test
 	public void testPost() {
 		

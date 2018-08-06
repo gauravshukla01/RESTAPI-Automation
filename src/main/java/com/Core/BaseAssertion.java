@@ -27,6 +27,7 @@ public class BaseAssertion {
 	public static void verifyStatusCode(Response response, int status){
 		
 		Assert.assertEquals(TestUtils.getStatusCode(response), status);
+	//	ExtentTestManager.getTest().log(Status.PASS, "Test Passed - Status Code matches");
 		if(TestUtils.getStatusCode(response)==status) {
 			ExtentTestManager.getTest().log(Status.PASS, "Test Passed - Status Code matches");
 		}
@@ -45,5 +46,4 @@ public class BaseAssertion {
 			ExtentTestManager.getTest().log(Status.FAIL, "Test Failed - Response String does not match");
 		}
 	}
-	
 }

@@ -3,12 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.easybix.Issue.Test001">
+      <class name="com.testClasses.Test001">
         <methods>
           <include name="generateAuth"/>
           <include name="testGet"/>
         </methods>
-      </class> <!-- com.easybix.Issue.Test001 -->
+      </class> <!-- com.testClasses.Test001 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
